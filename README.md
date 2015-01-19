@@ -1,2 +1,2 @@
-WeAre.scot
+Flask Scaffold
 ==========
