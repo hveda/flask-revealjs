@@ -1,2 +1,2 @@
-Flask Scaffold
+Flask Reveal.js Scaffold
 ==========
