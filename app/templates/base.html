@@ -2,10 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="author" content="Iain Hunter">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="static/reveal.css">
+    <link rel="stylesheet" href="static/theme/moon.css" id="theme">
     <title>Hello World</title>
 
 </head>
 <body>
-     {% block page_content %}{% endblock %}
+    <div class="reveal">
+       <div class="slides">
+            {% block page_content %}{% endblock %}
+       </div>
+    </div>
+
+    <script src="static/lib/js/head.min.js"></script>
+	<script src="static/js/reveal.js"></script>
+
+	<script>
+
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'static/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'static/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'static/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'static/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'static/plugin/zoom-js/zoom.js', async: true },
+				{ src: 'static/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
 </body>
