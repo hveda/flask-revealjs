@@ -10,13 +10,12 @@
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="static/reveal.css">
     <link rel="stylesheet" href="static/theme/moon.css" id="theme">
-    <title>Hello World</title>
-
+    {% block title %}{% endblock %}
 </head>
 <body>
     <div class="reveal">
        <div class="slides">
-            {% block page_content %}{% endblock %}
+            {% block slide %}{% endblock %}
        </div>
     </div>
 

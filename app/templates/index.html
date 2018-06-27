@@ -1,10 +1,11 @@
-{% extends "base.html" %}
-
-{% block page_content %}
-    <section>
-        <h1>Hello Iain!</h1>
-    </section>
-    <section>
-        <h1>Slide 2</h1>
-    </section>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<title>Home</title>
+  </head>
+  <body>
+        {% for i in range(slide_files_number) %}
+    		<p><a href="/{{ slide_files[i] }}"> {{ i+1 }}) {{ slide_files[i] }} </a></p>
+  		{% endfor %}
+  </body>
+</html>
